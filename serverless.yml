@@ -1,0 +1,27 @@
+service: ap-api
+frameworkVersion: '3'
+
+custom:
+  secrets: ${file(secrets.json)}
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  environment: 
+    DB_NAME: ${self:custom.secrets.DB_NAME}
+    DB_USER: ${self:custom.secrets.DB_USER}
+    DB_PASSWORD: ${self:custom.secrets.DB_PASSWORD}
+    DB_HOST: ${self:custom.secrets.DB_HOST}
+    DB_PORT: ${self:custom.secrets.DB_PORT}
+
+functions:
+  api:
+    handler: src/index.createServiceTwo
+    events:
+      - httpApi:
+          path: /
+          method: get
+        
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+      "target": "es2019",
+      "module": "commonjs",
+      "rootDir": "./",
+      "outDir": "./build",
+      "esModuleInterop": true,
+      "strict": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "baseUrl": ".",
+      "skipLibCheck": true,
+      "resolveJsonModule": true,
+  }
+}
