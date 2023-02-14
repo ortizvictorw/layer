@@ -11,5 +11,9 @@
       "baseUrl": ".",
       "skipLibCheck": true,
       "resolveJsonModule": true,
+      "paths": {
+        "/layer/nodejs/*": ["src/*"]
+      }
   }
 }
+/* "/opt/nodejs/*": ["src/testLayer/nodejs/*"] */

@@ -1,4 +1,4 @@
-import { Sequelize } from "sequelize-typescript";
+import { Sequelize } from '../../../layer/nodejs/node_modules/sequelize-typescript';
 import  User  from '../models/user.model'
 import { DB_HOST, DB_NAME, DB_PASSWORD, DB_USER, DB_PORT} from '../../../secrets.json'
 

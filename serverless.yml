@@ -15,12 +15,33 @@ provider:
     DB_PORT: ${self:custom.secrets.DB_PORT}
 
 functions:
-  api:
+  api1:
     handler: src/index.createServiceTwo
     events:
-      - httpApi:
+      - http:
           path: /
           method: get
+    layers:
+    - {Ref: CommonLibsLambdaLayer}
+
+  api2:
+    handler: src/index.createServiceTwo
+    events:
+      - http:
+          path: /
+          method: post
+
+  api3:
+      handler: src/index.createServiceTwo
+      events:
+        - http:
+            path: /lambda
+            method: post
+
+layers:
+  commonLibs:
+    path: layer  
+
         
 plugins:
   - serverless-plugin-typescript
